@@ -11,14 +11,16 @@ public class CSVFilesMerger{
 	public static void main(String[] args) {
 		if(args.length <2)  // Check atleast two files to merge
 		{
-		    System.out.println("Atleast two files need to be passed as argumwnts");
+		    // System.out.println("Atleast two files need to be passed as argumwnts");
+			throw new IllegalArgumentException("Atleast two files need to be passed as arguments");
 		}
 		List<Path> paths = new ArrayList<>();
 		for(String arg : args){
 			if(Files.exists(Paths.get(arg)) && Paths.get(arg).getFileName().toString().contains(".csv")) { // Check whether the file exists in the path and also file format should be .csv
 				paths.add(Paths.get(arg)); 
 			}else {
-				System.out.println(arg + " : FILE NOT SUPPORTED");
+				throw new IllegalArgumentException(arg + "Atleast two files need to be passed as arguments");
+				// System.out.println(arg + " : FILE NOT SUPPORTED");
 			}
 		}
 		
