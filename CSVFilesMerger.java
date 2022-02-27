@@ -39,7 +39,7 @@ public class CSVFilesMerger{
 		    }
 		    while((line = br.readLine()) != null)  // Read Untill the End Line
 		    {
-		    	System.out.println(line+", "+p.getFileName()+System.lineSeparator()); // writing in to file
+		    	System.out.println(line+", "+p.getFileName()); // writing in to file
 		    }
 		    br.close();
 		}
